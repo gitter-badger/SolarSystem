@@ -1,0 +1,100 @@
+﻿html {
+    overflow: hidden;
+}
+
+body.space {
+    background-color:black;
+}
+
+.draggable-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 10px auto;
+}
+
+/* Space Objects */
+.space-object {
+    position: absolute;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.space-object.large:hover {
+        -webkit-box-shadow: rgb(255, 245, 245) 0 0 50px 0;
+        -ms-box-shadow: rgb(255, 245, 245) 0 0 50px 0;
+        box-shadow: rgb(255, 245, 245) 0 0 50px 0;
+    }
+
+.space-object.medium:hover {
+        -webkit-box-shadow: rgb(255, 245, 245) 0 0 10px 0;
+        -ms-box-shadow: rgb(255, 245, 245) 0 0 10px 0;
+        box-shadow: rgb(255, 245, 245) 0 0 10px 0;
+    }
+
+
+
+.space-object.small:hover {
+    -webkit-box-shadow: rgb(255, 245, 245) 0 0 2px 0;
+    -ms-box-shadow: rgb(255, 245, 245) 0 0 2px 0;
+    box-shadow: rgb(255, 245, 245) 0 0 2px 0;
+}
+
+.star {
+    -webkit-box-shadow: rgb(204, 153, 0) 0 0 50px 0;
+    -ms-box-shadow: rgb(204, 153, 0) 0 0 50px 0;
+    box-shadow: rgb(204, 153, 0) 0 0 50px 0;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+}
+
+.satellite-orbit {
+    position: absolute;
+}
+
+#sun {
+    height: 100px;
+    width: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    background-color: yellow;
+    z-index: 100;
+}
+
+
+@keyframes spin-right {
+    100% {
+        -o-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin-right {
+    100% {
+        -o-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin-right {
+    100% {
+        -o-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

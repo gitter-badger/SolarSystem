@@ -1,0 +1,14 @@
+﻿#mercury {
+    height:5px;
+    width:5px;
+
+    background-color: chocolate;
+}
+
+.mercury-orbit {
+    width: 110px;
+    height: 110px;
+    margin-left: -55px;
+    margin-top: -55px;
+    -webkit-animation: spin-right 88s linear infinite;
+}

@@ -1,0 +1,15 @@
+﻿#saturn {
+    height:34.6px;
+    width:34.6px;
+    background-color: burlywood;
+}
+
+.saturn-orbit {
+    width: 600px;
+    height: 600px;
+    margin-left: -300px;
+    margin-top: -300px;
+    -webkit-animation: spin-right 10759s linear infinite;
+}
+
+/* SATELLITES */

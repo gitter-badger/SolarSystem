@@ -1,0 +1,15 @@
+﻿#jupiter {
+    height:41.1px;
+    width:41.1px;
+    background-color: lightsalmon;
+}
+
+.jupiter-orbit {
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    margin-top: -200px;
+    -webkit-animation: spin-right 4332s linear infinite;
+}
+
+/*SATELLITES */

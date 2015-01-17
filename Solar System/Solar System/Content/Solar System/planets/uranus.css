@@ -1,0 +1,16 @@
+﻿#uranus {
+    height:20px;
+    width:20px;
+    background-color: cadetblue;
+
+}
+
+.uranus-orbit {
+    width: 800px;
+    height: 800px;
+    margin-left: -400px;
+    margin-top: -400px;
+    -webkit-animation: spin-right 30685s linear infinite;
+}
+
+/* SATELLITES */

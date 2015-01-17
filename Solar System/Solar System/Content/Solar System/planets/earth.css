@@ -1,0 +1,41 @@
+﻿#earth {
+    height:13.2px;
+    width:13.2px;
+    z-index: 48;
+    background-color: cornflowerblue; 
+}
+
+
+.earth-orbit {
+    width: 210px;
+    height: 210px;
+    margin-left: -105px;
+    margin-top: -105px;
+    
+    -webkit-animation: spin-right 365s linear infinite;
+    -moz-animation: spin-right 365s linear infinite;
+    -ms-animation: spin-right 365s linear infinite;
+    -o-animation: spin-right 365s linear infinite;
+    animation: spin-right 365s linear infinite;
+}
+
+/* SATELLITES */
+#moon {
+    height:1.5px;
+    width:1.5px;
+    z-index: 47;
+
+    background-color: gray;
+}
+
+.moon-orbit {
+    width: 20px;
+    height: 20px;
+    margin-left: -3.4px;
+    margin-top: -3.4px;
+    -webkit-animation: spin-right 27s linear infinite;
+    -moz-animation: spin-right 27s linear infinite;
+    -o-animation: spin-right 27s linear infinite;
+    -ms-animation: spin-right 27s linear infinite;
+    animation: spin-right 27s linear infinite;
+}

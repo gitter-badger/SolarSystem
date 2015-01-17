@@ -1,0 +1,43 @@
+﻿#mars {
+    height:6.8px;
+    width:6.8px;
+    background-color: brown;
+}
+
+.mars-orbit {
+    width: 260px;
+    height: 260px;
+    margin-left: -130px;
+    margin-top: -130px;
+    -webkit-animation: spin-right 687s linear infinite;
+}
+
+/* SATELLITES */
+
+#fobos {
+    height:1px;
+    width:1px;
+    background-color:#808080;
+}
+
+.fobos-orbit {
+    width: 10px;
+    height: 10px;
+    margin-left: -1.6px;
+    margin-top: -1.6px;
+    -webkit-animation: spin-right 0.3s linear infinite;
+}
+
+#deimos {
+    height:1px;
+    width:1px;
+    background-color:#808080;
+}
+
+.deimos-orbit {
+    width: 16px;
+    height: 16px;
+    margin-left: -4.6px;
+    margin-top: -4.6px;
+    -webkit-animation: spin-right 1.3s linear infinite;
+}

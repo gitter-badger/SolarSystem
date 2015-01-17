@@ -1,0 +1,14 @@
+﻿#venus {
+    height:12.1px;
+    width:12.1px;
+
+    background-color: darkorange;
+}
+
+.venus-orbit {
+    width: 160px;
+    height: 160px;
+    margin-left: -80px;
+    margin-top: -80px;
+    -webkit-animation: spin-right 224s linear infinite;
+}
