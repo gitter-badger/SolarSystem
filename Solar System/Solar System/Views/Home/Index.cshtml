@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Model.Models.SpaceObject>
+
+@{
     Layout = "../Shared/_Layout.cshtml";
 }
 
@@ -36,5 +38,7 @@
     <div class="orbit mercury-orbit">
         <div class="space-object small" id="mercury"></div>
     </div>
-    <div class="space-object orbit star large" id="sun"></div>
+    <div class="space-object orbit star large" id="sun">
+        <span>@Model.FirstOrDefault(so => so.Name.Equals("Sun")).Name</span>
+    </div>
 </div>
