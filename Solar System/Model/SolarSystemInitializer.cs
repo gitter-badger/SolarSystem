@@ -5,9 +5,9 @@ using Model.Models;
 
 namespace Model
 {
-    public class SolarSystemInitializer : DropCreateDatabaseAlways<SolarSystemContext>
+    public class SolarSystemInitializer
     {
-        protected override void Seed(SolarSystemContext context)
+        public void Seed(SolarSystemContext context)
         {
             var spaceObjects = new List<SpaceObject>
             {
