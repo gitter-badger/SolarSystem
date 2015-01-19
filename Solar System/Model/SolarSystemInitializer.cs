@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using Model.Models;
 
 namespace Model
@@ -9,17 +8,45 @@ namespace Model
     {
         public void Seed(SolarSystemContext context)
         {
+            var sunId = Guid.NewGuid();
+            var sunSatellites = new List<SpaceObject>
+            {
+                new SpaceObject
+                {
+                    Id=Guid.NewGuid(),
+                    PrimaryId = sunId,
+                    Name = "Mercury",
+                    Satellites = null,
+                    Type = SpaceObjectType.Planet
+                },
+                new SpaceObject
+                {
+                    Id=Guid.NewGuid(),
+                    PrimaryId = sunId,
+                    Name = "Venus",
+                    Satellites = null,
+                    Type = SpaceObjectType.Planet
+                },
+                new SpaceObject
+                {
+                    Id=Guid.NewGuid(),
+                    PrimaryId = sunId,
+                    Name = "Earth",
+                    Type = SpaceObjectType.Planet
+                }
+            };
+
             var spaceObjects = new List<SpaceObject>
             {
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Sun"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Mercury"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Venus"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Mars"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Jupiter"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Saturn"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Uranus"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Neptune"},
-                new SpaceObject {Id = Guid.NewGuid(), Name = "Earth"},
+                new SpaceObject
+                {
+                    Id = Guid.NewGuid(), 
+                    Name = "Sun", 
+                    IsCenter = true, 
+                    Radius = 100, 
+                    Type = SpaceObjectType.Star,
+                    Satellites = sunSatellites
+                },
             };
 
             spaceObjects.ForEach(s => context.SpaceObjects.Add(s));
