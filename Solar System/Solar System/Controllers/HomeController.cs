@@ -1,21 +1,22 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using DAL;
+using Model;
 
 namespace Solar_System.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IDataManager _dm;
+        private readonly SolarSystemContext _dm;
 
-        public HomeController(IDataManager dataManager)
+        public HomeController()
         {
-            _dm = dataManager;
+            _dm = new SolarSystemContext();
         }
 
         public ActionResult Index()
         {
-            return View(_dm.SpaceObjects.GetAll().ToList());
+            return View(_dm.SpaceObjects.ToList());
         }
     }
 }
