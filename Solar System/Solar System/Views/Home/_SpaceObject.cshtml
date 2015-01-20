@@ -1,0 +1,50 @@
+﻿@using AutoMapper
+@using Model.Models
+@using Solar_System.Models
+@model SpaceObjectViewModel
+
+@{
+    var sizeClass = String.Empty;
+    switch (Model.Size)
+    {
+        case SizeType.Small:
+            sizeClass = "small";
+            break;
+        case SizeType.Medium:
+            sizeClass = "medium";
+            break;
+        case SizeType.Large:
+            sizeClass = "large";
+            break;
+    }
+
+    String orbitType;
+    switch (Model.Type)
+    {
+        case SpaceObjectType.Moon:
+            orbitType = "satellite-orbit";
+            break;
+        default:
+            orbitType = "orbit";
+            break;
+    }
+}
+
+@if (!Model.IsCenter)
+{
+    <div class="@orbitType @Model.Name.ToLower()-orbit">
+        <div class="space-object @sizeClass" id="@Model.Name.ToLower()"></div>
+    </div>
+    if (Model.Satellites != null && Model.Satellites.Any())
+    {
+        foreach (var moon in Model.Satellites)
+        {
+            @Html.Partial("_SpaceObject", Mapper.Map<SpaceObject, SpaceObjectViewModel>(moon))
+        }
+    }
+
+}
+else if (Model.IsCenter && Model.Type.Equals(SpaceObjectType.Star))
+{
+    <div class="space-object @orbitType star @sizeClass" id="@Model.Name.ToLower()"></div>
+}

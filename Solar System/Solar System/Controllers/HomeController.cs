@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using DAL;
+using AutoMapper;
 using Model;
+using Model.Models;
+using Solar_System.Models;
 
 namespace Solar_System.Controllers
 {
@@ -16,9 +18,8 @@ namespace Solar_System.Controllers
 
         public ActionResult Index()
         {
-            var model = _dm.SpaceObjects.ToList();
-            
-
+            var spaceObjects = _dm.SpaceObjects.ToList();
+            var model = spaceObjects.Select(Mapper.Map<SpaceObject, SpaceObjectViewModel>);
 
             return View(model);
         }
