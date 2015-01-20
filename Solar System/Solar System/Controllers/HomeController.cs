@@ -16,7 +16,11 @@ namespace Solar_System.Controllers
 
         public ActionResult Index()
         {
-            return View(_dm.SpaceObjects.ToList());
+            var model = _dm.SpaceObjects.ToList();
+            
+
+
+            return View(model);
         }
     }
 }

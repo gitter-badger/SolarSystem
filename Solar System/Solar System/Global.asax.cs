@@ -16,12 +16,12 @@ namespace Solar_System
         {
             DependencyResolverConfig.Register();
             AreaRegistration.RegisterAllAreas();
-
+            Database.SetInitializer(new SolarSystemInitializer());
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            InitializeDatabase();
+            //InitializeDatabase();
         }
 
         private static void InitializeDatabase()
@@ -34,19 +34,18 @@ namespace Solar_System
             // Creates Database with custom configuration
             dbContext.Database.Initialize(true);
 
-
             // Seed new database with initial data
-            SeedDatabaseWithData();
+            //SeedDatabaseWithData();
         }
 
-        private static void SeedDatabaseWithData()
-        {
-            DbContext dbContext =
-                    (SolarSystemContext)System.Web.Mvc.DependencyResolver
-                        .Current.GetService(typeof(DbContext));
-
-            var initializer = new SolarSystemInitializer();
-            initializer.Seed((SolarSystemContext)dbContext);
-        }
+        //private static void SeedDatabaseWithData()
+        //{
+        //    DbContext dbContext =
+        //            (SolarSystemContext)System.Web.Mvc.DependencyResolver
+        //                .Current.GetService(typeof(DbContext));
+        //
+        //    var initializer=new SolarSystemInitializer();
+        //    initializer.Seed((SolarSystemContext)dbContext);
+        //}
     }
 }

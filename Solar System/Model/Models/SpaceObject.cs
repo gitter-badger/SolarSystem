@@ -6,9 +6,9 @@ namespace Model.Models
     public class SpaceObject
     {
         public Guid Id { get; set; }
-        public Guid? PrimaryId { get; set; }
+        public Guid? SpaceObjectId { get; set; }
         public String Name { get; set; }
-        public int Radius { get; set; }
+        public double Radius { get; set; }
         public double OrbitalPeriod { get; set; }
         public int Aphelion { get; set; }
         public int Perihelion { get; set; }
@@ -16,5 +16,6 @@ namespace Model.Models
         public bool IsCenter { get; set; }
 
         public virtual ICollection<SpaceObject> Satellites { get; set; }
+        public virtual SpaceObject Primary { get; set; }
     }
 }
