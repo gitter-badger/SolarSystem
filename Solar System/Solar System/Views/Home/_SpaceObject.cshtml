@@ -34,15 +34,15 @@
 {
     <div class="@orbitType @Model.Name.ToLower()-orbit">
         <div class="space-object @sizeClass" id="@Model.Name.ToLower()"></div>
-    </div>
-    if (Model.Satellites != null && Model.Satellites.Any())
-    {
-        foreach (var moon in Model.Satellites)
-        {
-            @Html.Partial("_SpaceObject", Mapper.Map<SpaceObject, SpaceObjectViewModel>(moon))
-        }
-    }
 
+        @if (Model.Satellites != null && Model.Satellites.Any())
+        {
+            foreach (var moon in Model.Satellites)
+            {
+                @Html.Partial("_SpaceObject", Mapper.Map<SpaceObject, SpaceObjectViewModel>(moon))
+            }
+        }
+    </div>
 }
 else if (Model.IsCenter && Model.Type.Equals(SpaceObjectType.Star))
 {
