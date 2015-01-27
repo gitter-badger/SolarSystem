@@ -8,10 +8,14 @@ namespace Model.Models
         public Guid Id { get; set; }
         public Guid? SpaceObjectId { get; set; }
         public String Name { get; set; }
+        public String SymbolUrl { get; set; }
         public double Radius { get; set; }
         public double OrbitalPeriod { get; set; }
         public int Aphelion { get; set; }
         public int Perihelion { get; set; }
+        public int SemiMajorAxis { get; set; }
+        public double Eccentricity { get; set; }
+        public bool IsRetrograd { get; set; }
         public SpaceObjectType Type { get; set; }
         public bool IsCenter { get; set; }
 

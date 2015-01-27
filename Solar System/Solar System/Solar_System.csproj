@@ -152,6 +152,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\OrbitViewModel.cs" />
     <Compile Include="Models\SizeType.cs" />
     <Compile Include="Models\SpaceObjectViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,6 +267,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_SpaceObject.cshtml" />
     <Content Include="Scripts\rotate.js" />
+    <Content Include="Views\Home\_Orbit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

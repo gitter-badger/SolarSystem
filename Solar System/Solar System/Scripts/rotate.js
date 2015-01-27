@@ -14,7 +14,7 @@
 	}
 
 	function rotate(object) {
-	    var x=
+	    
 	}
 });
 

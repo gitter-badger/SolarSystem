@@ -18,21 +18,22 @@
             break;
     }
 
-    String orbitType;
+    var objectTypeClass=String.Empty;
     switch (Model.Type)
     {
         case SpaceObjectType.Moon:
-            orbitType = "satellite-orbit";
+            objectTypeClass = "satellite";
             break;
-        default:
-            orbitType = "orbit";
+        case SpaceObjectType.Planet:
+            objectTypeClass = "planet";
             break;
     }
 }
 
 @if (!Model.IsCenter)
 {
-    <div class="@orbitType @Model.Name.ToLower()-orbit">
+    <div class="@objectTypeClass">
+        @Html.Partial("_Orbit",Model.Orbit)
         <div class="space-object @sizeClass" id="@Model.Name.ToLower()"></div>
 
         @if (Model.Satellites != null && Model.Satellites.Any())
@@ -46,5 +47,5 @@
 }
 else if (Model.IsCenter && Model.Type.Equals(SpaceObjectType.Star))
 {
-    <div class="space-object @orbitType star @sizeClass" id="@Model.Name.ToLower()"></div>
+    <div class="space-object star @sizeClass" id="@Model.Name.ToLower()"></div>
 }

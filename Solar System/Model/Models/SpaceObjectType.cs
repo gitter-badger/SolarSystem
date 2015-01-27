@@ -4,6 +4,7 @@
     {
         Asteroid,
         Comet,
+        DwarfPlanet,
         Moon,
         Planet,
         Star
