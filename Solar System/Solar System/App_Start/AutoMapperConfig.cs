@@ -16,7 +16,8 @@ namespace Solar_System
                     m => m.MapFrom(so => so.SemiMajorAxis * Math.Sqrt(1 - Math.Pow(so.Eccentricity, 2))));
             Mapper.CreateMap<OrbitViewModel, SpaceObject>();
 
-            Mapper.CreateMap<SpaceObject, SpaceObjectViewModel>();
+            Mapper.CreateMap<SpaceObject, SpaceObjectViewModel>()
+                .ForMember(sovm => sovm.Orbit, m => m.MapFrom(so => Mapper.Map<SpaceObject, OrbitViewModel>(so)));
             Mapper.CreateMap<SpaceObjectViewModel, SpaceObject>();
         }
     }

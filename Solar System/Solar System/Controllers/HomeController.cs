@@ -20,7 +20,7 @@ namespace Solar_System.Controllers
         {
             var spaceObjects = _dm.SpaceObjects.ToList();
             var model = spaceObjects.Select(Mapper.Map<SpaceObject, SpaceObjectViewModel>);
-
+            
             return View(model);
         }
     }

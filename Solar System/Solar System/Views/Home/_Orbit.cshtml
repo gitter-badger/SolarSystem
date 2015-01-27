@@ -1,5 +1,5 @@
 ﻿@model Solar_System.Models.OrbitViewModel
 
-<svg class="orbit" height="2000" width="2000">
-    <ellipse cx="50%" cy="50%" rx="@Model.MajorAxis" ry="@Model.MinorAxis" />
+<svg class="orbit" height="@(Model.MinorAxis+1)" width="@(Model.MajorAxis+1)">
+    <ellipse cx="50%" cy="50%" rx="@Model.SemiMajorAxis" ry="@Model.SemiMinorAxis" />
 </svg>

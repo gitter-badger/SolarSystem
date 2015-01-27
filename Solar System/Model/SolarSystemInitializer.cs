@@ -23,7 +23,21 @@ namespace Model
 
             //var mercury = PlanetCreator("Mercury", sun.Id, 5, 10, 10, 88);
             //var venus = PlanetCreator("Venus", sun.Id, 12.1, 60, 60, 224);
-            var earth = PlanetCreator("Earth", sun.Id, 13.2, 110, 110, 365);
+            //var earth = PlanetCreator("Earth", sun.Id, 13.2, 110, 110, 365);
+            var earth = new SpaceObject
+            {
+                Name="Earth",
+                Radius = 13.2,
+                Aphelion = 110,
+                Perihelion = 110,
+                OrbitalPeriod = 365,
+                Eccentricity = 0.01671123,
+                Id = Guid.NewGuid(),
+                SpaceObjectId = sun.Id,
+                SemiMajorAxis = 110,
+                Type = SpaceObjectType.Planet
+            };
+
             //var mars = PlanetCreator("Mars", sun.Id, 6.8, 160, 160, 687);
             //var jupiter = PlanetCreator("Jupiter", sun.Id, 41.1, 300, 300, 4332);
             //var saturn = PlanetCreator("Saturn", sun.Id, 34.6, 400, 400, 10759);
@@ -36,15 +50,15 @@ namespace Model
                 //mercury,venus,earth,mars,jupiter,saturn,uranus,neptune
             });
 
-            var satellites = new List<SpaceObject>();
-
-            var moon = SatelliteCreator("Moon", earth.Id, 1.5, 20, 20, 27);
-
-            satellites.Add(moon);
+            //var satellites = new List<SpaceObject>();
+            //
+            //var moon = SatelliteCreator("Moon", earth.Id, 1.5, 20, 20, 27);
+            //
+            //satellites.Add(moon);
 
             context.SpaceObjects.Add(sun);
             context.SpaceObjects.AddRange(planets);
-            context.SpaceObjects.AddRange(satellites);
+            //context.SpaceObjects.AddRange(satellites);
             context.SaveChanges();
         }
 
