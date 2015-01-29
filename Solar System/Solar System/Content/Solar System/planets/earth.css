@@ -11,12 +11,6 @@
     height: 210px;
     margin-left: -105px;
     margin-top: -105px;
-    
-    -webkit-animation: spin-right 365s linear infinite;
-    -moz-animation: spin-right 365s linear infinite;
-    -ms-animation: spin-right 365s linear infinite;
-    -o-animation: spin-right 365s linear infinite;
-    animation: spin-right 365s linear infinite;
 }
 
 /* SATELLITES */
@@ -33,9 +27,4 @@
     height: 20px;
     margin-left: -3.4px;
     margin-top: -3.4px;
-    -webkit-animation: spin-right 27s linear infinite;
-    -moz-animation: spin-right 27s linear infinite;
-    -o-animation: spin-right 27s linear infinite;
-    -ms-animation: spin-right 27s linear infinite;
-    animation: spin-right 27s linear infinite;
 }

@@ -65,6 +65,11 @@ svg.orbit > ellipse {
     opacity: 0.1;
 }
 
+    svg.orbit > ellipse:hover {
+        -ms-opacity: 0.4;
+        opacity: 0.4;
+    }
+
 #sun {
     height: 100px;
     width: 100px;
@@ -72,35 +77,4 @@ svg.orbit > ellipse {
     margin-left: -50px;
     background-color: yellow;
     z-index: 100;
-}
-
-
-@keyframes spin-right {
-    100% {
-        -o-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@-webkit-keyframes spin-right {
-    100% {
-        -o-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@-moz-keyframes spin-right {
-    100% {
-        -o-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
 }
