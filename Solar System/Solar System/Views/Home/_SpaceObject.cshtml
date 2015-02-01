@@ -1,5 +1,6 @@
 ﻿@using System.Globalization
 @using AutoMapper
+@using Microsoft.Ajax.Utilities
 @using Model.Models
 @using Solar_System.Models
 @model SpaceObjectViewModel
@@ -19,7 +20,7 @@
             break;
     }
 
-    var objectTypeClass=String.Empty;
+    var objectTypeClass = String.Empty;
     switch (Model.Type)
     {
         case SpaceObjectType.Moon:
@@ -34,11 +35,12 @@
 @if (!Model.IsCenter)
 {
     <div class="@objectTypeClass">
-        
-        @Html.Partial("_Orbit",Model.Orbit)
+
+        @Html.Partial("_Orbit", Model.Orbit)
 
         <div class="space-object @sizeClass" id="@Model.Name.ToLower()"
-             style="left: @String.Format("{0}px",-Model.Orbit.SemiMajorAxis-(int)Model.Radius/2);">
+             style="left: @String.Format("{0}px", -Model.Orbit.SemiMajorAxis - (int)Model.Radius / 2); height:@String.Format("{0}px", Model.Radius.ToString(CultureInfo.InvariantCulture));width: @String.Format("{0}px", Model.Radius.ToString(CultureInfo.InvariantCulture))"
+             data-period="@Model.OrbitalPeriod" data-is-retro="@Model.IsRetrograde" data-perihelion="@Model.Orbit.Perihelion" data-aphelion="@Model.Orbit.Aphelion" data-eccentricity="@Model.Orbit.Eccentricity">
         </div>
 
         @if (Model.Satellites != null && Model.Satellites.Any())

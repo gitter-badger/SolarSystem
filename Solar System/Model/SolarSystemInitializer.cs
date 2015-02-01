@@ -9,13 +9,12 @@ namespace Model
     {
         protected override void Seed(SolarSystemContext context)
         {
-
             var sun = new SpaceObject
              {
                  Id = Guid.NewGuid(),
                  Name = "Sun",
                  IsCenter = true,
-                 Radius = 100,
+                 Radius = 695510,
                  Type = SpaceObjectType.Star
              };
 
@@ -27,14 +26,14 @@ namespace Model
             var earth = new SpaceObject
             {
                 Name="Earth",
-                Radius = 13.2,
-                Aphelion = 110,
-                Perihelion = 110,
+                Radius = 6.4,
+                Aphelion = 152098,
+                Perihelion = 147098,
                 OrbitalPeriod = 365,
                 Eccentricity = 0.01671123,
                 Id = Guid.NewGuid(),
                 SpaceObjectId = sun.Id,
-                SemiMajorAxis = 110,
+                SemiMajorAxis = 149598,
                 Type = SpaceObjectType.Planet
             };
 
@@ -60,42 +59,6 @@ namespace Model
             context.SpaceObjects.AddRange(planets);
             //context.SpaceObjects.AddRange(satellites);
             context.SaveChanges();
-        }
-
-        private static SpaceObject PlanetCreator(String name, Guid? primaryId, double radius, int aphelion, int perihelion, double orbitalPeriod)
-        {
-            var planet = SpaceObjectCreator(name, primaryId, radius);
-            planet.Aphelion = aphelion;
-            planet.Perihelion = perihelion;
-            planet.OrbitalPeriod = orbitalPeriod;
-            planet.Type = SpaceObjectType.Planet;
-
-            return planet;
-        }
-
-        private static SpaceObject SatelliteCreator(String name, Guid? primaryId, double radius, int aphelion, int perihelion, double orbitalPeriod)
-        {
-            var moon = SpaceObjectCreator(name, primaryId, radius);
-            moon.Aphelion = aphelion;
-            moon.Perihelion = perihelion;
-            moon.OrbitalPeriod = orbitalPeriod;
-            moon.Type = SpaceObjectType.Moon;
-
-            return moon;
-        }
-
-        private static SpaceObject SpaceObjectCreator(String name, Guid? primaryId, double radius, bool isCenter = false)
-        {
-            var spaceObject = new SpaceObject()
-            {
-                Id = Guid.NewGuid(),
-                Name = name,
-                SpaceObjectId = primaryId,
-                Radius = radius,
-                IsCenter = isCenter
-            };
-
-            return spaceObject;
         }
     }
 }

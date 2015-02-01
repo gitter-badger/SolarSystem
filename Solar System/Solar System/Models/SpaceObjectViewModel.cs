@@ -12,14 +12,10 @@ namespace Solar_System.Models
         public String SymbolUrl { get; set; }
         public double Radius { get; set; }
         public double OrbitalPeriod { get; set; }
-        public bool IsRetrograd { get; set; }
+        public bool IsRetrograde { get; set; }
         public SpaceObjectType Type { get; set; }
         public bool IsCenter { get; set; }
         public OrbitViewModel Orbit { get; set; }
-
-        public virtual ICollection<SpaceObject> Satellites { get; set; }
-        public virtual SpaceObject Primary { get; set; }
-
         public SizeType Size
         {
             get
@@ -42,5 +38,9 @@ namespace Solar_System.Models
                 return result;
             }
         }
+        public double Diameter { get; set; }
+
+        public virtual ICollection<SpaceObject> Satellites { get; set; }
+        public virtual SpaceObject Primary { get; set; }
     }
 }

@@ -9,7 +9,8 @@ namespace Solar_System
         {
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
                         "~/Scripts/zoom.js",
-                        "~/Scripts/draggable.js"));
+                        "~/Scripts/draggable.js",
+                        "~/Scripts/rotate.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
