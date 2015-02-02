@@ -8,13 +8,13 @@
 
     function rotate(spaceObject) {
         var f = 0,
-            s = 2 * Math.PI / 180;
+            s = 0.1 * Math.PI / 180;
 
         setInterval(function() {
             f += s;
-            spaceObject.style.left = 235 + 149 * Math.sin(f) + 'px';
-            spaceObject.style.left = 235 + 149 * Math.cos(f) + 'px';
-        }, 1000);
+            spaceObject.style.left = 50 * Math.sin(f) + 'px';
+            spaceObject.style.top = 100 * Math.cos(f) + 'px';
+        }, 0.365);
     }
 });
 
