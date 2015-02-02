@@ -39,8 +39,14 @@
         @Html.Partial("_Orbit", Model.Orbit)
 
         <div class="space-object @sizeClass" id="@Model.Name.ToLower()"
-             style="left: @String.Format("{0}px", -Model.Orbit.SemiMajorAxis - (int)Model.Radius / 2); height:@String.Format("{0}px", Model.Radius.ToString(CultureInfo.InvariantCulture));width: @String.Format("{0}px", Model.Radius.ToString(CultureInfo.InvariantCulture))"
-             data-period="@Model.OrbitalPeriod" data-is-retro="@Model.IsRetrograde" data-perihelion="@Model.Orbit.Perihelion" data-aphelion="@Model.Orbit.Aphelion" data-eccentricity="@Model.Orbit.Eccentricity">
+             style="height:@String.Format("{0}px", Model.Radius.ToString(CultureInfo.InvariantCulture));width: @String.Format("{0}px", Model.Radius.ToString(CultureInfo.InvariantCulture))"
+             data-period="@Model.OrbitalPeriod" 
+             data-is-retro="@Model.IsRetrograde" 
+             data-perihelion="@Model.Orbit.Perihelion" 
+             data-aphelion="@Model.Orbit.Aphelion" 
+             data-eccentricity="@Model.Orbit.Eccentricity"
+             data-semi-minor="@Model.Orbit.SemiMinorAxis" 
+             data-semi-major="@Model.Orbit.SemiMajorAxis">
         </div>
 
         @if (Model.Satellites != null && Model.Satellites.Any())
