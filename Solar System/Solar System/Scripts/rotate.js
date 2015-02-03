@@ -16,7 +16,7 @@
 
         setInterval(function () {
 
-            if (isRetrograde == true) {
+            if (isRetrograde == "True") {
                 f -= s;
             } else {
                 f += s;

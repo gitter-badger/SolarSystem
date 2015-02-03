@@ -15,7 +15,7 @@ namespace Model.Models
         public int Perihelion { get; set; }
         public int SemiMajorAxis { get; set; }
         public double Eccentricity { get; set; }
-        public bool IsRetrograd { get; set; }
+        public bool IsRetrograde { get; set; }
         public SpaceObjectType Type { get; set; }
         public bool IsCenter { get; set; }
 
