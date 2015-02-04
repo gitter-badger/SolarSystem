@@ -9,10 +9,11 @@
     function rotate(spaceObject) {
         var f = Math.floor((Math.random() * 360) + 0),
             s = 0.1 * Math.PI / 180,
-            interval = 0.1 * $(spaceObject).attr("data-period") / 100,
+            interval = 0.1 * $(spaceObject).attr("data-period") / 10,
             isRetrograde = $(spaceObject).attr("data-is-retro"),
             semiMinorAxis = $(spaceObject).attr("data-semi-minor"),
-            semiMajorAxis = $(spaceObject).attr("data-semi-major");
+            semiMajorAxis = $(spaceObject).attr("data-semi-major"),
+            perihelion = $(spaceObject).attr("data-perihelion");
 
         setInterval(function () {
 
@@ -22,7 +23,7 @@
                 f += s;
             }
 
-            spaceObject.style.left = semiMajorAxis * Math.sin(f) + 'px';
+            spaceObject.style.left = (semiMajorAxis) * Math.sin(f) +(semiMajorAxis-perihelion)+ 'px';
             spaceObject.style.top = semiMinorAxis * Math.cos(f) + 'px';
         }, interval);
     }

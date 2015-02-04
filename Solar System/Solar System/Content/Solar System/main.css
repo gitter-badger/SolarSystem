@@ -71,10 +71,10 @@ svg.orbit > ellipse {
     }
 
 #sun {
-    height: 100px;
-    width: 100px;
-    margin-top: -50px;
-    margin-left: -50px;
+    height: 50px;
+    width: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
     background-color: yellow;
     z-index: 100;
 }

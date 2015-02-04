@@ -4,13 +4,6 @@
 }
 
 
-.earth-orbit {
-    width: 210px;
-    height: 210px;
-    margin-left: -105px;
-    margin-top: -105px;
-}
-
 /* SATELLITES */
 #moon {
     z-index: 47;

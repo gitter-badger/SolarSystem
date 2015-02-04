@@ -63,6 +63,72 @@ namespace Model
                 Type = SpaceObjectType.Planet,
                 IsRetrograde = true
             };
+            var mars = new SpaceObject
+            {
+                Name = "Mars",
+                Radius = 3.4,
+                Aphelion = 249232,
+                Perihelion = 206655,
+                OrbitalPeriod = 687,
+                Eccentricity = 0.0933941,
+                Id = Guid.NewGuid(),
+                SpaceObjectId = sun.Id,
+                SemiMajorAxis = 227944,
+                Type = SpaceObjectType.Planet,
+            };
+            var jupiter = new SpaceObject
+            {
+                Name = "Jupiter",
+                Radius = 70,
+                Aphelion = 816520,
+                Perihelion = 740573,
+                OrbitalPeriod = 4332.6,
+                Eccentricity = 0.048775,
+                Id = Guid.NewGuid(),
+                SpaceObjectId = sun.Id,
+                SemiMajorAxis = 778547,
+                Type = SpaceObjectType.Planet,
+            };
+            var saturn = new SpaceObject
+            {
+                Name = "Saturn",
+                Radius = 60.2,
+                Aphelion = 1513326,
+                Perihelion = 1353573,
+                OrbitalPeriod = 10759,
+                Eccentricity = 0.055723219,
+                Id = Guid.NewGuid(),
+                SpaceObjectId = sun.Id,
+                SemiMajorAxis = 1433449,
+                Type = SpaceObjectType.Planet,
+            };
+            var uranus = new SpaceObject
+            {
+                Name = "Uranus",
+                Radius = 25.6,
+                Aphelion = 3004420,
+                Perihelion = 2748939,
+                OrbitalPeriod = 30685,
+                Eccentricity = 0.044405586,
+                Id = Guid.NewGuid(),
+                SpaceObjectId = sun.Id,
+                SemiMajorAxis = 2876679,
+                Type = SpaceObjectType.Planet,
+                IsRetrograde = true
+            };
+            var neptune = new SpaceObject
+            {
+                Name = "Neptune",
+                Radius = 24.7,
+                Aphelion = 4553946,
+                Perihelion = 4452940,
+                OrbitalPeriod = 60190,
+                Eccentricity = 0.011214269,
+                Id = Guid.NewGuid(),
+                SpaceObjectId = sun.Id,
+                SemiMajorAxis = 4503444,
+                Type = SpaceObjectType.Planet,
+            };
 
 
             //var mars = PlanetCreator("Mars", sun.Id, 6.8, 160, 160, 687);
@@ -73,7 +139,7 @@ namespace Model
 
             planets.AddRange(new List<SpaceObject>
             {
-                mercury,venus,earth//mars,jupiter,saturn,uranus,neptune
+                mercury,venus,earth,mars,jupiter,saturn,uranus,neptune
             });
 
             //var satellites = new List<SpaceObject>();
