@@ -13,7 +13,8 @@
             isRetrograde = $(spaceObject).attr("data-is-retro"),
             semiMinorAxis = $(spaceObject).attr("data-semi-minor"),
             semiMajorAxis = $(spaceObject).attr("data-semi-major"),
-            perihelion = $(spaceObject).attr("data-perihelion");
+            perihelion = $(spaceObject).attr("data-perihelion"),
+            radius = $(spaceObject).attr("data-radius");
 
         setInterval(function () {
 
@@ -23,8 +24,8 @@
                 f += s;
             }
 
-            spaceObject.style.left = (semiMajorAxis) * Math.sin(f) +(semiMajorAxis-perihelion)+ 'px';
-            spaceObject.style.top = semiMinorAxis * Math.cos(f) + 'px';
+            spaceObject.style.left = (semiMajorAxis) * Math.sin(f) + (semiMajorAxis - perihelion - radius) + 'px';
+            spaceObject.style.top = (semiMinorAxis) * Math.cos(f) - radius + 'px';
         }, interval);
     }
 });
