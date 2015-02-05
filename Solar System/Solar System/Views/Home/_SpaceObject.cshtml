@@ -1,6 +1,5 @@
 ﻿@using System.Globalization
 @using AutoMapper
-@using Microsoft.Ajax.Utilities
 @using Model.Models
 @using Solar_System.Models
 @model SpaceObjectViewModel
@@ -42,21 +41,22 @@
              style="height:@String.Format("{0}px", Model.Diameter.ToString(CultureInfo.InvariantCulture));width: @String.Format("{0}px", Model.Diameter.ToString(CultureInfo.InvariantCulture))"
              data-period="@Model.OrbitalPeriod.ToString(CultureInfo.InvariantCulture)" 
              data-is-retro="@Model.IsRetrograde" 
-             data-perihelion="@Model.Orbit.Perihelion" 
-             data-aphelion="@Model.Orbit.Aphelion" 
-             data-eccentricity="@Model.Orbit.Eccentricity"
-             data-semi-minor="@Model.Orbit.SemiMinorAxis" 
-             data-semi-major="@Model.Orbit.SemiMajorAxis"
-             data-radius="@Model.Radius.ToString(CultureInfo.InvariantCulture)">
-        </div>
-
-        @if (Model.Satellites != null && Model.Satellites.Any())
-        {
-            foreach (var moon in Model.Satellites)
+             data-perihelion="@Model.Orbit.Perihelion.ToString(CultureInfo.InvariantCulture)" 
+             data-aphelion="@Model.Orbit.Aphelion.ToString(CultureInfo.InvariantCulture)" 
+             data-eccentricity="@Model.Orbit.Eccentricity.ToString(CultureInfo.InvariantCulture)"
+             data-semi-minor="@Model.Orbit.SemiMinorAxis.ToString(CultureInfo.InvariantCulture)" 
+             data-semi-major="@Model.Orbit.SemiMajorAxis.ToString(CultureInfo.InvariantCulture)"
+             data-radius="@Model.Radius.ToString(CultureInfo.InvariantCulture)"
+             data-primary-radius="@Model.Primary.Radius.ToString(CultureInfo.InvariantCulture)">
+            
+            @if (Model.Satellites != null && Model.Satellites.Any())
             {
-                @Html.Partial("_SpaceObject", Mapper.Map<SpaceObject, SpaceObjectViewModel>(moon))
+                foreach (var moon in Model.Satellites)
+                {
+                    @Html.Partial("_SpaceObject", Mapper.Map<SpaceObject, SpaceObjectViewModel>(moon))
+                }
             }
-        }
+        </div>
     </div>
 }
 else if (Model.IsCenter && Model.Type.Equals(SpaceObjectType.Star))

@@ -4,6 +4,12 @@
 
     for (var i = 0; i < $planets.length; i++) {
         rotate($planets[i]);
+
+        var $satellites = $planets.find(".satellite>.space-object");
+
+        for (var j = 0; j < $satellites.length; j++) {
+            //rotate($satellites[j]);
+        }
     }
 
     function rotate(spaceObject) {
@@ -14,7 +20,8 @@
             semiMinorAxis = $(spaceObject).attr("data-semi-minor"),
             semiMajorAxis = $(spaceObject).attr("data-semi-major"),
             perihelion = $(spaceObject).attr("data-perihelion"),
-            radius = $(spaceObject).attr("data-radius");
+            radius = $(spaceObject).attr("data-radius"),
+            primaryRadius = $(spaceObject).attr("data-primary-radius");
 
         setInterval(function () {
 
@@ -24,9 +31,8 @@
                 f += s;
             }
 
-            spaceObject.style.left = (semiMajorAxis) * Math.sin(f) + (semiMajorAxis - perihelion - radius) + 'px';
-            spaceObject.style.top = (semiMinorAxis) * Math.cos(f) - radius + 'px';
+            spaceObject.style.left = (semiMajorAxis+primaryRadius) * Math.sin(f) + (semiMajorAxis - perihelion - radius) + 'px';
+            spaceObject.style.top = (semiMinorAxis+primaryRadius) * Math.cos(f) - radius + 'px';
         }, interval);
     }
 });
-

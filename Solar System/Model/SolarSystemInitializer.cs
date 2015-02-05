@@ -14,15 +14,13 @@ namespace Model
                  Id = Guid.NewGuid(),
                  Name = "Sun",
                  IsCenter = true,
-                 Radius = 695510,
+                 Radius = 25,
                  Type = SpaceObjectType.Star
              };
 
             var planets = new List<SpaceObject>();
+            var satellites = new List<SpaceObject>();
 
-            //var mercury = PlanetCreator("Mercury", sun.Id, 5, 10, 10, 88);
-            //var venus = PlanetCreator("Venus", sun.Id, 12.1, 60, 60, 224);
-            //var earth = PlanetCreator("Earth", sun.Id, 13.2, 110, 110, 365);
             var earth = new SpaceObject
             {
                 Name = "Earth",
@@ -35,6 +33,19 @@ namespace Model
                 SpaceObjectId = sun.Id,
                 SemiMajorAxis = 149598,
                 Type = SpaceObjectType.Planet
+            };
+            var moon = new SpaceObject
+            {
+                Name = "Moon",
+                Radius = 1.7,
+                Aphelion = 406,
+                Perihelion = 363,
+                OrbitalPeriod = 27.3,
+                Eccentricity = 0.0549,
+                Id = new Guid(),
+                SpaceObjectId = earth.Id,
+                SemiMajorAxis = 384,
+                Type = SpaceObjectType.Moon
             };
             var mercury = new SpaceObject
             {
@@ -130,39 +141,16 @@ namespace Model
                 Type = SpaceObjectType.Planet,
             };
 
-
-            //var mars = PlanetCreator("Mars", sun.Id, 6.8, 160, 160, 687);
-            //var jupiter = PlanetCreator("Jupiter", sun.Id, 41.1, 300, 300, 4332);
-            //var saturn = PlanetCreator("Saturn", sun.Id, 34.6, 400, 400, 10759);
-            //var uranus = PlanetCreator("Uranus", sun.Id, 20, 700, 700, 30685);
-            //var neptune = PlanetCreator("Neptune", sun.Id, 14.2, 900, 900, 60190);
-
             planets.AddRange(new List<SpaceObject>
             {
                 mercury,venus,earth,mars,jupiter,saturn,uranus,neptune
             });
 
-            //var satellites = new List<SpaceObject>();
-
-            //var moon = new SpaceObject
-            //{
-            //    Name = "Moon",
-            //    Radius = 1.7,
-            //    Aphelion = 406,
-            //    Perihelion = 363,
-            //    OrbitalPeriod = 27.3,
-            //    SemiMajorAxis = 384,
-            //    Eccentricity = 0.0549,
-            //    Id = Guid.NewGuid(),
-            //    SpaceObjectId = earth.Id,
-            //    Type = SpaceObjectType.Moon
-            //};
-
-            //satellites.Add(moon);
+            satellites.Add(moon);
 
             context.SpaceObjects.Add(sun);
             context.SpaceObjects.AddRange(planets);
-            //context.SpaceObjects.AddRange(satellites);
+            context.SpaceObjects.AddRange(satellites);
             context.SaveChanges();
         }
     }

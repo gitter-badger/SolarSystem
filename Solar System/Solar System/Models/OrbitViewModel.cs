@@ -2,13 +2,14 @@
 {
     public class OrbitViewModel
     {
-        public int Aphelion { get; set; }
-        public int Perihelion { get; set; }
-        public int SemiMajorAxis { get; set; }
-        public int SemiMinorAxis { get; set; }
+        public double PrimaryDiameter { get; set; }
+        public double Aphelion { get; set; }
+        public double Perihelion { get; set; }
+        public double SemiMajorAxis { get; set; }
+        public double SemiMinorAxis { get; set; }
         public double Eccentricity { get; set; }
         public double FocusParameter { get; set; }
-        public int MajorAxis { get { return SemiMajorAxis * 2; } }
-        public int MinorAxis { get { return SemiMinorAxis * 2; } }
+        public double MajorAxis { get { return SemiMajorAxis * 2; } }
+        public double MinorAxis { get { return SemiMinorAxis * 2; } }
     }
 }

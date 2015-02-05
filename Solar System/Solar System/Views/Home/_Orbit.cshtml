@@ -1,10 +1,11 @@
-﻿@model Solar_System.Models.OrbitViewModel
+﻿@using System.Globalization
+@model Solar_System.Models.OrbitViewModel
 
 <svg class="orbit" 
-     height="@(Model.MinorAxis+1)" 
-     width="@(Model.MajorAxis+1)"
-    style="left: -@(Model.Perihelion)px; top:-@(Model.SemiMinorAxis)">
+     height="@((Model.MinorAxis+1+Model.PrimaryDiameter).ToString(CultureInfo.InvariantCulture))" 
+     width="@((Model.MajorAxis+1+Model.PrimaryDiameter).ToString(CultureInfo.InvariantCulture))"
+    style="left: -@((Model.Perihelion+Model.PrimaryDiameter/2).ToString(CultureInfo.InvariantCulture))px; top: -@((Model.SemiMinorAxis+Model.PrimaryDiameter/2).ToString(CultureInfo.InvariantCulture))px">
     
-    <ellipse cx="50%" cy="50%" rx="@(Model.SemiMajorAxis)" ry="@(Model.SemiMinorAxis)" />
+    <ellipse cx="50%" cy="50%" rx="@((Model.SemiMajorAxis+Model.PrimaryDiameter/2).ToString(CultureInfo.InvariantCulture))" ry="@((Model.SemiMinorAxis+Model.PrimaryDiameter/2).ToString(CultureInfo.InvariantCulture))" />
 
 </svg>

@@ -11,9 +11,9 @@ namespace Model.Models
         public String SymbolUrl { get; set; }
         public double Radius { get; set; }
         public double OrbitalPeriod { get; set; }
-        public int Aphelion { get; set; }
-        public int Perihelion { get; set; }
-        public int SemiMajorAxis { get; set; }
+        public double Aphelion { get; set; }
+        public double Perihelion { get; set; }
+        public double SemiMajorAxis { get; set; }
         public double Eccentricity { get; set; }
         public bool IsRetrograde { get; set; }
         public SpaceObjectType Type { get; set; }
