@@ -17,11 +17,13 @@
             s = 0.1 * Math.PI / 180,
             interval = 0.1 * $(spaceObject).attr("data-period") / 10,
             isRetrograde = $(spaceObject).attr("data-is-retro"),
-            semiMinorAxis = $(spaceObject).attr("data-semi-minor"),
-            semiMajorAxis = $(spaceObject).attr("data-semi-major"),
-            perihelion = $(spaceObject).attr("data-perihelion"),
-            radius = $(spaceObject).attr("data-radius"),
-            primaryRadius = $(spaceObject).attr("data-primary-radius");
+            semiMinorAxis = parseFloat($(spaceObject).attr("data-semi-minor")),
+            semiMajorAxis = parseFloat($(spaceObject).attr("data-semi-major")),
+            perihelion = parseFloat($(spaceObject).attr("data-perihelion")),
+            radius = parseFloat($(spaceObject).attr("data-radius")),
+            primaryRadius = parseFloat($(spaceObject).attr("data-primary-radius")),
+            x = semiMajorAxis + primaryRadius,
+            y = semiMinorAxis + primaryRadius+radius;
 
         setInterval(function () {
 
@@ -31,8 +33,8 @@
                 f += s;
             }
 
-            spaceObject.style.left = (semiMajorAxis+primaryRadius) * Math.sin(f) + (semiMajorAxis - perihelion - radius) + 'px';
-            spaceObject.style.top = (semiMinorAxis+primaryRadius) * Math.cos(f) - radius + 'px';
+            spaceObject.style.left = x * Math.sin(f) + (semiMajorAxis-perihelion) + 'px';
+            spaceObject.style.top = y * Math.cos(f) + 'px';
         }, interval);
     }
 });
